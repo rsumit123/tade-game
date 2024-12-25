@@ -52,6 +52,37 @@ button {
   font-size: 14px;
 }
 
+.submit-score {
+  margin: 20px 0;
+}
+
+.submit-score form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-score input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 200px;
+  max-width: 80%;
+  font-size: 16px;
+}
+
+.submit-score button {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.high-scores {
+  margin: 20px 0;
+}
+
+.high-scores table {
+  margin: 0 auto;
+}
+
 .upgrade-section {
   margin-top: 20px;
 }
@@ -74,5 +105,9 @@ footer {
   button {
     font-size: 16px;
     padding: 8px 12px;
+  }
+
+  .submit-score input {
+    width: 300px;
   }
 }
