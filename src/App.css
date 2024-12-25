@@ -26,6 +26,24 @@ main {
   align-items: center;
 }
 
+/* **New Styling for Last Purchase Message** */
+.last-purchase {
+  background-color: #e7f3fe; /* Light blue background */
+  border-left: 6px solid #2196F3; /* Blue border on the left */
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 4px;
+  color: black;
+}
+
+.last-purchase p {
+  margin: 0;
+  font-size: 16px;
+}
+
 table {
   width: 100%;
   max-width: 600px;

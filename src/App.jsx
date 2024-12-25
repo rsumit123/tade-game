@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { fetchHighScores, submitHighScore } from './highScores';
@@ -46,6 +48,9 @@ function App() {
   const [playerName, setPlayerName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // **New State Variable for Last Purchase**
+  const [lastPurchase, setLastPurchase] = useState(null);
+
   // Fetch high scores on component mount
   useEffect(() => {
     const loadHighScores = async () => {
@@ -68,6 +73,13 @@ function App() {
           i.id === itemId ? { ...i, quantity: i.quantity + amount } : i
         )
       );
+
+      // **Update Last Purchase State**
+      setLastPurchase({
+        name: item.name,
+        price: item.price,
+        quantity: amount,
+      });
     }
   };
 
@@ -145,6 +157,15 @@ function App() {
         <h1>Game Over</h1>
         <p>Final Cash Balance: {cash} Rs</p>
 
+        {/* **Display Last Purchase Message** */}
+        {lastPurchase && (
+          <div className="last-purchase">
+            <p>
+              The last item purchased was <strong>{lastPurchase.name}</strong> at <strong>{lastPurchase.price} Rs</strong> for <strong>{lastPurchase.quantity}</strong> units.
+            </p>
+          </div>
+        )}
+
         {/* Submit High Score Form */}
         <div className="submit-score">
           <h2>Submit Your High Score</h2>
@@ -205,6 +226,15 @@ function App() {
         </div>
       </header>
       <main>
+        {/* **Optional: Display Last Purchase Message on Main Screen** */}
+        {lastPurchase && (
+          <div className="last-purchase">
+            <p>
+              Last purchased: <strong>{lastPurchase.name}</strong> at <strong>{lastPurchase.price} Rs</strong> for <strong>{lastPurchase.quantity}</strong> units.
+            </p>
+          </div>
+        )}
+
         <h3>Items</h3>
         <table>
           <thead>
