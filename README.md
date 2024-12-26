@@ -1,4 +1,4 @@
-`# Trading Game
+# Trading Game
 
 A simple, mobile-friendly trading game built with React. Players buy and sell various items whose prices fluctuate daily, aiming to maximize their cash balance within 30 days. The game features backpack capacity upgrades and a public high scores leaderboard.
 
